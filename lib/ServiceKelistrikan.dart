@@ -3,14 +3,14 @@ import 'package:myapp/Servisan.dart'; // Import the Servisan file
 import 'package:myapp/ChatTeknisi.dart';
 import 'package:myapp/Akun.dart';
 
-class ServicePipa extends StatefulWidget {
-  const ServicePipa({super.key});
+class ServiceKelistrikan extends StatefulWidget {
+  const ServiceKelistrikan({super.key});
 
   @override
-  _ServicePipaState createState() => _ServicePipaState();
+  _ServiceKelistrikanState createState() => _ServiceKelistrikanState();
 }
 
-class _ServicePipaState extends State<ServicePipa> {
+class _ServiceKelistrikanState extends State<ServiceKelistrikan> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController namaController = TextEditingController();
   final TextEditingController jenisUnitController = TextEditingController();
@@ -25,7 +25,7 @@ class _ServicePipaState extends State<ServicePipa> {
   ];
   String? selectedLayanan;
 
-  final List<String> teknisiOptions = ['John Doe', 'Jane Smith', 'David Johnson', 'Maliq', 'Michael', 'Mikael', 'Maychel', 'Wahyu', 'Wendy'];
+  final List<String> teknisiOptions = ['John Doe', 'Jane Smith', 'David Johnson', 'David', 'Ferdi', 'Anis', 'Budi', 'Fred', 'Qudri'];
   String? selectedTeknisi;
 
   bool isProcessing = false; // Menunjukkan apakah proses sedang berlangsung atau tidak
@@ -63,7 +63,7 @@ class _ServicePipaState extends State<ServicePipa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Service Pipa'),
+        title: const Text('Service Motor'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
