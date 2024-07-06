@@ -1,45 +1,53 @@
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class Daftar extends StatelessWidget {
+  const Daftar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController namaController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Akun Baru'),
+        title: const Text('Daftar Akun'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextField(
+              controller: namaController,
               decoration: const InputDecoration(
-                labelText: 'Nama Lengkap',
+                labelText: 'Nama',
+                border: OutlineInputBorder(),
               ),
             ),
+            const SizedBox(height: 10),
             TextField(
+              controller: emailController,
               decoration: const InputDecoration(
-                labelText: 'Email atau Telepon',
+                labelText: 'Email',
+                border: OutlineInputBorder(),
               ),
             ),
+            const SizedBox(height: 10),
             TextField(
-              decoration: const InputDecoration(
-                labelText: 'Kata Sandi',
-              ),
+              controller: passwordController,
               obscureText: true,
-            ),
-            TextField(
               decoration: const InputDecoration(
-                labelText: 'Konfirmasi Kata Sandi',
+                labelText: 'Password',
+                border: OutlineInputBorder(),
               ),
-              obscureText: true,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/home');
+                // Implement your registration logic here
+                // Example: Navigate back to login page after registration
+                Navigator.pop(context);
               },
               child: const Text('Daftar'),
             ),

@@ -1,35 +1,43 @@
 import 'package:flutter/material.dart';
 
 class Akun extends StatelessWidget {
-  const Akun({Key? key}) : super(key: key);
+  const Akun({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Akun'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, '/ubahData'); // Navigate to UbahData page
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.person),
               title: Text('Nama Pengguna'),
-              subtitle: Text('John Doe'), // Ganti dengan nama pengguna yang sesuai
+              subtitle: Text('Olovian'), // Ganti dengan nama pengguna yang sesuai
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.email),
               title: Text('Email'),
               subtitle: Text('johndoe@example.com'), // Ganti dengan alamat email yang sesuai
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.location_on),
               title: Text('Alamat'),
               subtitle: Text('Jl. Contoh No. 123'), // Ganti dengan alamat yang sesuai
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.phone),
               title: Text('Nomor HP'),
               subtitle: Text('081234567890'), // Ganti dengan nomor HP yang sesuai
@@ -37,7 +45,7 @@ class Akun extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login'); // Mengganti pushReplacementNamed menjadi pushNamed agar dapat kembali ke halaman login
+                Navigator.pushNamed(context, '/login'); // Navigate to login page
               },
               child: const Text('Logout'),
             ),
